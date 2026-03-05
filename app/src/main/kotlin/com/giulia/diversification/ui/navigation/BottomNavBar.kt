@@ -2,7 +2,7 @@ package com.giulia.diversification.ui.navigation
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.BarChart
-import androidx.compose.material.icons.filled.MenuBook
+import androidx.compose.material.icons.automirrored.filled.MenuBook
 import androidx.compose.material.icons.filled.Restaurant
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
@@ -19,7 +19,7 @@ data class BottomNavItem(
 
 val bottomNavItems = listOf(
     BottomNavItem(Screen.Foods, "Aliments", Icons.Default.Restaurant),
-    BottomNavItem(Screen.Journal, "Journal", Icons.Default.MenuBook),
+    BottomNavItem(Screen.Journal, "Journal", Icons.AutoMirrored.Filled.MenuBook),
     BottomNavItem(Screen.Progress, "Progression", Icons.Default.BarChart),
 )
 

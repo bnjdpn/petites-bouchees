@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace = "com.giulia.diversification"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.giulia.diversification"
         minSdk = 26
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
     }
