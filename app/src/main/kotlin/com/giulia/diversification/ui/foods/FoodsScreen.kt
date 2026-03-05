@@ -149,12 +149,12 @@ fun FoodsScreen(
                 FilterChip(
                     selected = uiState.showOnlyTested == true,
                     onClick = { viewModel.setTestedFilter(true) },
-                    label = { Text("Testes") }
+                    label = { Text("Testés") }
                 )
                 FilterChip(
                     selected = uiState.showOnlyTested == false,
                     onClick = { viewModel.setTestedFilter(false) },
-                    label = { Text("A tester") }
+                    label = { Text("À tester") }
                 )
             }
 
@@ -283,7 +283,7 @@ private fun FoodItemCard(
                     .padding(horizontal = 8.dp, vertical = 4.dp)
             ) {
                 Text(
-                    text = "Des ${food.recommendedAgeMonths}m",
+                    text = "Dès ${food.recommendedAgeMonths}m",
                     style = MaterialTheme.typography.labelSmall,
                     color = MaterialTheme.colorScheme.onPrimaryContainer
                 )
@@ -294,7 +294,7 @@ private fun FoodItemCard(
             // Tested indicator
             Icon(
                 imageVector = if (isTested) Icons.Filled.CheckCircle else Icons.Outlined.Circle,
-                contentDescription = if (isTested) "Teste" else "Non teste",
+                contentDescription = if (isTested) "Testé" else "Non testé",
                 modifier = Modifier
                     .padding(end = 12.dp)
                     .size(24.dp),

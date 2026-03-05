@@ -176,7 +176,7 @@ private fun OverallProgressSection(uiState: ProgressUiState) {
                 color = MaterialTheme.colorScheme.primary
             )
             Text(
-                text = "${uiState.testedFoods}/${uiState.totalFoods} aliments testes",
+                text = "${uiState.testedFoods}/${uiState.totalFoods} aliments testés",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
@@ -188,7 +188,7 @@ private fun OverallProgressSection(uiState: ProgressUiState) {
 private fun CategoryProgressSection(categoryProgress: List<CategoryProgress>) {
     Column(modifier = Modifier.fillMaxWidth()) {
         Text(
-            text = "Par categorie",
+            text = "Par catégorie",
             style = MaterialTheme.typography.titleMedium,
             fontWeight = FontWeight.SemiBold,
             modifier = Modifier.padding(bottom = 12.dp)
@@ -254,7 +254,7 @@ private fun CategoryProgressRow(progress: CategoryProgress) {
 private fun ReactionsSection(likedCount: Int, neutralCount: Int, dislikedCount: Int) {
     Column(modifier = Modifier.fillMaxWidth()) {
         Text(
-            text = "Reactions",
+            text = "Réactions",
             style = MaterialTheme.typography.titleMedium,
             fontWeight = FontWeight.SemiBold,
             modifier = Modifier.padding(bottom = 12.dp)
@@ -267,7 +267,7 @@ private fun ReactionsSection(likedCount: Int, neutralCount: Int, dislikedCount: 
             ReactionCard(
                 emoji = "\u2764\uFE0F",
                 count = likedCount,
-                label = "Aimes",
+                label = "Aimés",
                 backgroundColor = ReactionLiked.copy(alpha = 0.15f),
                 contentColor = ReactionLiked,
                 modifier = Modifier.weight(1f)
@@ -283,7 +283,7 @@ private fun ReactionsSection(likedCount: Int, neutralCount: Int, dislikedCount: 
             ReactionCard(
                 emoji = "\uD83D\uDE45",
                 count = dislikedCount,
-                label = "Pas aimes",
+                label = "Pas aimés",
                 backgroundColor = ReactionDisliked.copy(alpha = 0.15f),
                 contentColor = ReactionDisliked,
                 modifier = Modifier.weight(1f)
@@ -377,7 +377,7 @@ private fun AlertCard(alert: AlertItem) {
             if (alert.hasDigestiveIssue) {
                 Icon(
                     imageVector = Icons.Filled.WarningAmber,
-                    contentDescription = "Probleme digestif",
+                    contentDescription = "Problème digestif",
                     tint = Color(0xFFFF9800),
                     modifier = Modifier.size(20.dp)
                 )
@@ -386,7 +386,7 @@ private fun AlertCard(alert: AlertItem) {
             if (alert.hasAllergicReaction) {
                 Icon(
                     imageVector = Icons.Filled.ErrorOutline,
-                    contentDescription = "Reaction allergique",
+                    contentDescription = "Réaction allergique",
                     tint = ReactionDisliked,
                     modifier = Modifier.size(20.dp)
                 )

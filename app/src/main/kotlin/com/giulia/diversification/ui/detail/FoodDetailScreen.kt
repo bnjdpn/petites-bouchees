@@ -172,7 +172,7 @@ fun FoodDetailScreen(
                     )
                     Spacer(modifier = Modifier.width(8.dp))
                     Text(
-                        text = "Age recommande : des ${food.recommendedAgeMonths} mois",
+                        text = "Âge recommandé : dès ${food.recommendedAgeMonths} mois",
                         style = MaterialTheme.typography.bodyLarge
                     )
                 }
@@ -224,7 +224,7 @@ fun FoodDetailScreen(
 
                 // Reaction selector
                 Text(
-                    text = "Reaction",
+                    text = "Réaction",
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.SemiBold
                 )
@@ -278,7 +278,7 @@ fun FoodDetailScreen(
                     )
                     Spacer(modifier = Modifier.width(8.dp))
                     Text(
-                        text = "Probleme digestif",
+                        text = "Problème digestif",
                         style = MaterialTheme.typography.bodyLarge
                     )
                 }
@@ -301,7 +301,7 @@ fun FoodDetailScreen(
                     )
                     Spacer(modifier = Modifier.width(8.dp))
                     Text(
-                        text = "Reaction allergique",
+                        text = "Réaction allergique",
                         style = MaterialTheme.typography.bodyLarge
                     )
                 }
@@ -344,7 +344,7 @@ fun FoodDetailScreen(
                         )
                     ) {
                         Text(
-                            text = "Supprimer l'entree",
+                            text = "Supprimer l'entrée",
                             style = MaterialTheme.typography.labelLarge
                         )
                     }
