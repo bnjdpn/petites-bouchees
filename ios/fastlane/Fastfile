@@ -58,7 +58,6 @@ platform :ios do
     increment_build_number(build_number: latest_testflight_build_number(api_key: api_key) + 1, xcodeproj: "PetitesBouchees.xcodeproj")
     build_signed_app
     upload_to_testflight(api_key: api_key, skip_waiting_for_build_processing: true)
-    commit_version_bump(xcodeproj: "PetitesBouchees.xcodeproj", message: "build: bump build number for TestFlight", force: true)
   end
 
   desc "Full App Store release: screenshots + metadata + build"
@@ -70,7 +69,6 @@ platform :ios do
     build_signed_app
     upload_to_app_store(api_key: api_key, skip_binary_upload: true, skip_metadata: true, overwrite_screenshots: true, force: true, run_precheck_before_submit: false, screenshots_path: File.expand_path("../app_store_screenshots", __dir__))
     upload_to_app_store(api_key: api_key, skip_screenshots: true, skip_metadata: false, force: true, run_precheck_before_submit: false)
-    commit_version_bump(xcodeproj: "PetitesBouchees.xcodeproj", message: "build: bump build number for App Store release", force: true)
   end
 
   desc "Deploy without screenshots"
@@ -80,7 +78,6 @@ platform :ios do
     increment_build_number(build_number: latest_testflight_build_number(api_key: api_key) + 1, xcodeproj: "PetitesBouchees.xcodeproj")
     build_signed_app
     upload_to_app_store(api_key: api_key, skip_screenshots: true, skip_metadata: false, force: true, run_precheck_before_submit: false)
-    commit_version_bump(xcodeproj: "PetitesBouchees.xcodeproj", message: "build: bump build number for App Store release", force: true)
   end
 
   desc "Upload metadata only"
