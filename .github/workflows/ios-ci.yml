@@ -1,0 +1,71 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    paths: ['ios/**']
+  pull_request:
+    branches: [main]
+    paths: ['ios/**']
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    name: Build & Test
+    runs-on: [self-hosted, macOS, ARM64]
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: ios
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select iOS Simulator
+        id: sim
+        run: |
+          SIMULATORS=("iPhone 17 Pro" "iPhone 17" "iPhone 16e" "iPhone 16 Pro" "iPhone 15 Pro" "iPhone 15")
+          for device in "${SIMULATORS[@]}"; do
+            if xcrun simctl list devices available | grep -q "$device"; then
+              echo "device=$device" >> "$GITHUB_OUTPUT"
+              echo "Selected simulator: $device"
+              exit 0
+            fi
+          done
+          echo "No suitable simulator found" && exit 1
+
+      - name: Generate Xcode project
+        run: xcodegen generate
+
+      - name: Build
+        run: |
+          set -o pipefail
+          xcodebuild build-for-testing \
+            -project PetitesBouchees.xcodeproj \
+            -scheme PetitesBouchees \
+            -destination 'platform=iOS Simulator,name=${{ steps.sim.outputs.device }}' \
+            -skipPackagePluginValidation \
+            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO \
+            | xcpretty
+
+      - name: Run tests
+        run: |
+          set -o pipefail
+          xcodebuild test-without-building \
+            -project PetitesBouchees.xcodeproj \
+            -scheme PetitesBouchees \
+            -destination 'platform=iOS Simulator,name=${{ steps.sim.outputs.device }}' \
+            -only-testing:PetitesBoucheesTests \
+            | xcpretty
+
+      - name: Upload test results
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: ~/Library/Developer/Xcode/DerivedData/**/Logs/Test/*.xcresult
+          retention-days: 5

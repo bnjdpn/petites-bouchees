@@ -1,0 +1,15 @@
+devices([
+  "iPhone 17 Pro Max"
+])
+
+languages(["fr-FR"])
+
+scheme("PetitesBouchees")
+
+output_directory("./app_store_screenshots")
+
+clear_previous_screenshots(true)
+
+override_status_bar(true)
+
+launch_arguments(["-screenshot"])
