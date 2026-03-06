@@ -1,1 +1,1 @@
-diversification,bebe,aliments,allergies,introduction,nourriture,repas,suivi,journal,DME
+bebe,aliments,allergies,introduction,nourriture,repas,suivi,journal,DME,enfant,solide,recette,manger
