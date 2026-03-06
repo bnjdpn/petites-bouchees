@@ -89,6 +89,46 @@ platform :ios do
     upload_to_app_store(api_key: api_key, skip_binary_upload: true, skip_screenshots: true, force: true, run_precheck_before_submit: false)
   end
 
+  desc "Create app on App Store Connect"
+  lane :create_app do
+    api_key = load_api_key
+
+    # Register bundle ID on Developer Portal
+    UI.message("Creating bundle ID on Developer Portal...")
+    begin
+      Spaceship::ConnectAPI::BundleId.create(
+        name: "PetitesBouchees",
+        identifier: "com.bnjdpn.PetitesBouchees",
+        platform: "IOS"
+      )
+      UI.success("Bundle ID created!")
+    rescue => e
+      UI.important("Bundle ID: #{e.message}")
+    end
+
+    # Find the bundle ID
+    bundle_id = Spaceship::ConnectAPI::BundleId.find("com.bnjdpn.PetitesBouchees")
+    unless bundle_id
+      UI.user_error!("Could not find bundle ID com.bnjdpn.PetitesBouchees")
+    end
+
+    # Create app on App Store Connect
+    UI.message("Creating app on App Store Connect...")
+    begin
+      app = Spaceship::ConnectAPI::App.create(
+        name: "Petites Bouch\u00E9es",
+        version_string: "1.0.0",
+        sku: "com.bnjdpn.PetitesBouchees",
+        primary_locale: "fr-FR",
+        bundle_id: bundle_id.id,
+        platforms: ["IOS"]
+      )
+      UI.success("App created: #{app.name}")
+    rescue => e
+      UI.important("App: #{e.message}")
+    end
+  end
+
   desc "Upload screenshots"
   lane :upload_screenshots do
     api_key = load_api_key
