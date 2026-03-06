@@ -4,11 +4,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Android app for tracking baby food diversification (introduction of solid foods). All UI text is in French.
+Baby food diversification tracker (introduction of solid foods). All UI text is in French.
+
+Two native apps sharing the same product concept:
+
+| Platform | Directory | Details |
+|----------|-----------|---------|
+| Android | `app/` | Kotlin + Jetpack Compose + Room |
+| iOS | `ios/` | Swift 6 + SwiftUI + SwiftData (has its own `ios/CLAUDE.md`) |
+
+## Android
 
 Package: `com.petitesbouchees.app`
 
-## Build Commands
+### Build Commands
 
 **Prerequisites:** Java 17 must be in PATH (not available by default on this machine):
 ```bash
@@ -26,11 +35,11 @@ Debug APK output: `app/build/outputs/apk/debug/app-debug.apk`
 
 No tests are configured yet. No linter is configured.
 
-## Architecture
+### Architecture
 
 Single-module Android app (`app/`) using MVVM with Jetpack Compose, Room, and manual dependency injection.
 
-### Dependency Graph
+#### Dependency Graph
 
 ```
 MainActivity -> AppNavigation (Scaffold + NavHost)
@@ -41,14 +50,14 @@ MainActivity -> AppNavigation (Scaffold + NavHost)
               -> AppDatabase (Room, singleton)
 ```
 
-### Key Patterns
+#### Key Patterns
 
 - **No DI framework**: `DiversificationApp` (Application subclass) holds a lazy `FoodRepository`. Screens get it via `LocalContext.current.applicationContext as DiversificationApp`.
 - **ViewModel factories**: Each ViewModel has a nested `Factory` class that takes `FoodRepository` (and sometimes extra args like `foodId`).
 - **Room DB prepopulation**: `PrepopulateData.allFoods` is inserted via `AppDatabase.Callback.onCreate`. The database uses `fallbackToDestructiveMigration()` — bumping the version wipes data.
 - **Navigation**: Sealed class `Screen` defines routes. Bottom bar shows on Foods/Journal/Progress. FoodDetail takes a `foodId` int argument.
 
-### Data Model
+#### Data Model
 
 Two Room entities:
 - `Food` — id, name, category (enum `FoodCategory`), recommendedAgeMonths, notes
@@ -56,7 +65,7 @@ Two Room entities:
 
 `FoodCategory` has 7 values: LEGUMES, FRUITS, FECULENTS, PROTEINES, PRODUITS_LAITIERS, MATIERES_GRASSES, EPICES_AROMATES. Each has a French `displayName` and emoji.
 
-### Tech Versions
+#### Tech Versions
 
 - Kotlin 2.1.0, AGP 8.7.3, compileSdk/targetSdk 36, minSdk 26
 - Compose BOM 2024.12.01, Room 2.6.1, Navigation Compose 2.8.5
