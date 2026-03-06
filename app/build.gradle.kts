@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.giulia.diversification"
+    namespace = "com.petitesbouchees.app"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.giulia.diversification"
+        applicationId = "com.petitesbouchees.app"
         minSdk = 26
         targetSdk = 36
         versionCode = 1

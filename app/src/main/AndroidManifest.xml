@@ -3,8 +3,13 @@
     <application
         android:name=".DiversificationApp"
         android:label="@string/app_name"
-        android:theme="@style/Theme.DiversificationDeGiulia"
-        android:supportsRtl="true">
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/Theme.PetitesBouchees"
+        android:supportsRtl="true"
+        android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_rules"
+        android:dataExtractionRules="@xml/data_extraction_rules">
         <activity
             android:name=".MainActivity"
             android:exported="true"

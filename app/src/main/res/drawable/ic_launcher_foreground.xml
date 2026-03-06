@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Bowl body -->
+    <path
+        android:pathData="M28,52 Q28,72 54,72 Q80,72 80,52 L80,50 Q80,48 78,48 L30,48 Q28,48 28,50 Z"
+        android:fillColor="#FF8A65" />
+
+    <!-- Bowl rim -->
+    <path
+        android:pathData="M24,48 Q24,44 28,44 L80,44 Q84,44 84,48 Q84,52 80,52 L28,52 Q24,52 24,48 Z"
+        android:fillColor="#FFAB91" />
+
+    <!-- Spoon handle -->
+    <path
+        android:pathData="M62,44 L72,24"
+        android:strokeWidth="3.5"
+        android:strokeColor="#A1887F"
+        android:strokeLineCap="round" />
+
+    <!-- Spoon head -->
+    <path
+        android:pathData="M72,24 Q76,18 74,14 Q70,10 66,14 Q64,18 68,22 Z"
+        android:fillColor="#BCAAA4" />
+
+    <!-- Carrot in bowl -->
+    <path
+        android:pathData="M40,47 L36,38 Q38,36 42,38 Z"
+        android:fillColor="#FF7043" />
+
+    <!-- Carrot leaves -->
+    <path
+        android:pathData="M37,38 Q36,34 34,33 M39,37 Q39,33 38,31 M41,38 Q42,34 43,33"
+        android:strokeWidth="1.5"
+        android:strokeColor="#66BB6A"
+        android:strokeLineCap="round" />
+
+    <!-- Broccoli in bowl -->
+    <path
+        android:pathData="M52,47 L52,42"
+        android:strokeWidth="2"
+        android:strokeColor="#558B2F" />
+    <path
+        android:pathData="M48,42 Q48,38 52,38 Q56,38 56,42 Q56,44 52,44 Q48,44 48,42 Z"
+        android:fillColor="#66BB6A" />
+
+    <!-- Small pea -->
+    <path
+        android:pathData="M64,46 m-3,0 a3,3 0 1,1 6,0 a3,3 0 1,1 -6,0"
+        android:fillColor="#81C784" />
+
+    <!-- Steam lines -->
+    <path
+        android:pathData="M40,40 Q38,36 40,32"
+        android:strokeWidth="1.5"
+        android:strokeColor="#BDBDBD"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:pathData="M54,36 Q52,32 54,28"
+        android:strokeWidth="1.5"
+        android:strokeColor="#BDBDBD"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+
+    <!-- Heart -->
+    <path
+        android:pathData="M52,78 Q52,76 50,74 Q48,72 46,74 Q44,76 46,78 L52,84 L58,78 Q60,76 58,74 Q56,72 54,74 Q52,76 52,78 Z"
+        android:fillColor="#E91E63" />
+</vector>
