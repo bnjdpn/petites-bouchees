@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Petites Bouch&eacute;es &mdash; Diversification alimentaire</title>
+  <meta name="description" content="Suivez la diversification alimentaire de votre b&eacute;b&eacute;. 191 aliments, suivi des r&eacute;actions et allergies, progression par cat&eacute;gorie.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #2c2c2c; background: #fcfdf7; }
+    a { color: #4a7c59; }
+
+    .hero {
+      background: linear-gradient(135deg, #4a7c59 0%, #3a6347 100%);
+      color: #fff;
+      text-align: center;
+      padding: 4rem 1.5rem 3rem;
+    }
+    .hero-icon { font-size: 4rem; margin-bottom: 1rem; }
+    .hero h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .hero p { font-size: 1.15rem; opacity: 0.9; max-width: 500px; margin: 0 auto 2rem; line-height: 1.5; }
+    .badge { display: inline-block; }
+    .badge img { height: 54px; border-radius: 12px; }
+
+    .features {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    @media (max-width: 540px) { .features { grid-template-columns: 1fr; } }
+    .feature { text-align: center; }
+    .feature-icon { font-size: 2.2rem; margin-bottom: 0.5rem; }
+    .feature h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.35rem; color: #4a7c59; }
+    .feature p { font-size: 0.92rem; line-height: 1.5; color: #555; }
+
+    .screenshots {
+      background: #e0e4da;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+    .screenshots h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; color: #2c2c2c; }
+    .screenshots-grid {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .screenshots-grid img {
+      height: 420px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    }
+
+    .privacy-banner {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      background: #f5f7f2;
+    }
+    .privacy-banner h2 { font-size: 1.3rem; font-weight: 600; color: #4a7c59; margin-bottom: 0.5rem; }
+    .privacy-banner p { font-size: 0.95rem; color: #555; max-width: 520px; margin: 0 auto; line-height: 1.5; }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.85rem;
+      color: #888;
+    }
+    footer a { color: #4a7c59; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-icon">&#127860;</div>
+    <h1>Petites Bouch&eacute;es</h1>
+    <p>Le guide complet pour la diversification alimentaire de votre b&eacute;b&eacute;. Gratuit, sans pub, sans compte.</p>
+    <a class="badge" href="https://apps.apple.com/app/petites-bouchees/id6743135498">
+      <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/fr-fr?size=250x83" alt="T&eacute;l&eacute;charger dans l'App Store">
+    </a>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <div class="feature-icon">&#127813;</div>
+      <h3>191 aliments</h3>
+      <p>Base compl&egrave;te organis&eacute;e par cat&eacute;gorie et &acirc;ge recommand&eacute; (4, 6, 8, 12 mois).</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">&#128221;</div>
+      <h3>Suivi des introductions</h3>
+      <p>Enregistrez les r&eacute;actions, probl&egrave;mes digestifs et allergies pour chaque aliment.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">&#128200;</div>
+      <h3>Progression d&eacute;taill&eacute;e</h3>
+      <p>Pourcentage global, progression par cat&eacute;gorie, r&eacute;partition des r&eacute;actions.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">&#128274;</div>
+      <h3>Vie priv&eacute;e</h3>
+      <p>Aucune donn&eacute;e collect&eacute;e. Tout reste sur votre appareil. Point final.</p>
+    </div>
+  </section>
+
+  <section class="screenshots">
+    <h2>Aper&ccedil;u</h2>
+    <div class="screenshots-grid">
+      <img src="screenshots/01_Aliments.png" alt="&Eacute;cran Aliments">
+      <img src="screenshots/02_Journal.png" alt="&Eacute;cran Journal">
+      <img src="screenshots/03_Progression.png" alt="&Eacute;cran Progression">
+    </div>
+  </section>
+
+  <section class="privacy-banner">
+    <h2>&#128737; Respect de la vie priv&eacute;e</h2>
+    <p>Petites Bouch&eacute;es ne collecte aucune donn&eacute;e personnelle. Pas d'analytics, pas de tracking, pas de compte. <a href="privacy">Politique de confidentialit&eacute;</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Benjamin Dupin &middot; <a href="mailto:contact@bnjdpn.com">Contact &amp; Support</a> &middot; <a href="privacy">Confidentialit&eacute;</a></p>
+  </footer>
+
+</body>
+</html>
