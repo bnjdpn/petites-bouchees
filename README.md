@@ -7,7 +7,10 @@
 [![Android](https://img.shields.io/badge/Android-8.0%2B-3DDC84?logo=android&logoColor=white)](https://developer.android.com)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.1-7F52FF?logo=kotlin&logoColor=white)](https://kotlinlang.org)
 [![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-Material%203-4285F4?logo=jetpackcompose&logoColor=white)](https://developer.android.com/jetpack/compose)
+[![iOS](https://img.shields.io/badge/iOS-17.0%2B-000000?logo=apple&logoColor=white)](https://apps.apple.com/app/petites-bouchees/id6743135498)
 [![Licence MIT](https://img.shields.io/badge/Licence-MIT-yellow)](LICENSE)
+
+[Télécharger sur l'App Store](https://apps.apple.com/app/petites-bouchees/id6743135498)
 
 </div>
 
